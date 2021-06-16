@@ -17,8 +17,10 @@ namespace Working_with_files
             }
             else
             {
-                Directory.CreateDirectory(dirName);
+                Directory.CreateDirectory(dirName + "\\");
                 Console.WriteLine($"The folder '{dirName}' has been created");
+
+                createFile newFile = new createFile(dirName);
             }
         }
     }
