@@ -11,16 +11,18 @@ namespace Working_with_files
 
         public createFolder(string dirName)
         {
+            Console.Clear();
             if(Directory.Exists(dirName))
                 {
                 Console.WriteLine($"The folder '{dirName}' exists already");
+                _ = new mainMenu(dirName);
             }
             else
             {
-                Directory.CreateDirectory(dirName + "\\");
+                dirName += "\\";
+                Directory.CreateDirectory(dirName);
                 Console.WriteLine($"The folder '{dirName}' has been created");
-
-                createFile newFile = new createFile(dirName);
+                _ = new mainMenu(dirName);
             }
         }
     }
